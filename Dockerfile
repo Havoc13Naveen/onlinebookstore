@@ -2,8 +2,8 @@ FROM maven AS warfile
 RUN apt update && apt install git wget -y
 WORKDIR /home
 RUN mkdir source
-COPY .  source
 WORKDIR source
+COPY . .
 RUN mvn clean package
 
 
